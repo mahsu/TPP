@@ -9,7 +9,7 @@
         android:inputType="textPersonName"
         android:hint="Name"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/name"
         android:layout_gravity="center_horizontal" />
 
     <TextView
@@ -38,22 +38,23 @@
     <SeekBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/seekBar"
-        android:indeterminate="false" />
+        android:id="@+id/gender"
+        android:indeterminate="false"
+        android:max="10" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText2"
+        android:id="@+id/age"
         android:layout_gravity="center_horizontal"
         android:hint="Age" />
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner"
+        android:id="@+id/language"
         android:prompt="@string/language_prompt"
         android:entries="@array/language_options"
         android:spinnerMode="dropdown" />
@@ -63,14 +64,14 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/editText3"
+        android:id="@+id/pickupline"
         android:layout_gravity="center_horizontal"
         android:hint="Favorite CS Pickup Line" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText4"
+        android:id="@+id/project"
         android:hint="Coolest Project" />
 
     <Button
