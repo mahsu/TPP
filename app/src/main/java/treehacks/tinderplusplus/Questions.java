@@ -1,6 +1,7 @@
 package treehacks.tinderplusplus;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -39,7 +40,6 @@ public class Questions extends AppCompatActivity {
             nextQuestion();
 
             optA.setOnClickListener( new View.OnClickListener() {
-
                 @Override
                 public void onClick(View v) {
                     answers[currentQuestion] = false;
@@ -66,6 +66,7 @@ public class Questions extends AppCompatActivity {
             optB.setText(q.opt2);
         }
         else{
+            pushToShared();
             Intent i = new Intent(this, Matching.class);
             startActivity(i);
         }
@@ -81,6 +82,14 @@ public class Questions extends AppCompatActivity {
             opt1 = o1;
             opt2 = o2;
         }
+    }
+
+    public void pushToShared(){
+        SharedPreferences.Editor editor = getPreferences(MODE_PRIVATE).edit();
+        for (int i = 0; i < questions.size(); i++){
+            editor.putBoolean(questions.get(i).toString(), answers[i]);
+        }
+        editor.apply();
     }
 
 }
