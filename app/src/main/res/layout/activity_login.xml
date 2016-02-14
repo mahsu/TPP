@@ -63,6 +63,7 @@
 
             </android.support.design.widget.TextInputLayout>
 
+
             <Button
                 android:id="@+id/email_sign_in_button"
                 style="?android:textAppearanceSmall"
@@ -72,6 +73,11 @@
                 android:text="@string/action_sign_in"
                 android:textStyle="bold"
                 android:onClick="onRegisterClicked"/>
+            <com.twitter.sdk.android.core.identity.TwitterLoginButton
+                android:id="@+id/twitter_login_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"/>
 
         </LinearLayout>
     </ScrollView>
