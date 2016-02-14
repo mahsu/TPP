@@ -3,6 +3,7 @@ package treehacks.tinderplusplus;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -345,6 +346,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mAuthTask = null;
             showProgress(false);
         }
+    }
+
+    public void onRegisterClicked(View view){
+        Intent i = new Intent(this, Personal.class);
+        startActivity(i);
     }
 }
 
