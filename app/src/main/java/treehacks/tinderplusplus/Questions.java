@@ -7,8 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
 import java.util.ArrayList;
 import java.util.Collections;
+
+import cz.msebera.android.httpclient.Header;
 
 public class Questions extends AppCompatActivity {
 
@@ -67,8 +73,7 @@ public class Questions extends AppCompatActivity {
         }
         else{
             pushToShared();
-            Intent i = new Intent(this, Matching.class);
-            startActivity(i);
+            asyncHttp(this);
         }
     }
 
@@ -91,6 +96,46 @@ public class Questions extends AppCompatActivity {
         }
         editor.apply();
         editor.commit();
+
+    }
+    private void asyncHttp(final Questions quest){
+        final SharedPreferences settings = getPreferences(MODE_PRIVATE);
+
+        RequestParams params = new RequestParams();
+        for (String key: settings.getAll().keySet()){
+            params.put(key,settings.getString(key +"", ""));
+            System.out.println(key);
+            //System.out.println(client.get("http://tinderplusplus.mybluemix.net/data/selectAns/1"));
+        }
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.post("http://tinderplusplus.mybluemix.net/data/selectAns/1", params, new AsyncHttpResponseHandler() {
+
+            @Override
+            public void onStart() {
+                // called before request is started
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] response) {
+                // called when response HTTP status is "200 OK"
+                Intent i = new Intent(quest, Matching.class);
+                startActivity(i);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] errorResponse, Throwable e) {
+                // called when response HTTP status is "4XX" (eg. 401, 403, 404)
+            }
+
+            @Override
+            public void onRetry(int retryNo) {
+                // called when request is retried
+            }
+        });
+
+        settings.getAll();
+
 
     }
 
