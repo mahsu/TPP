@@ -33,7 +33,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/agepref"
         android:spinnerMode="dropdown"
-        android:prompt="Age"
         android:entries="@array/agepref_ranges"
         android:layout_below="@+id/ageheader"
         android:layout_alignParentLeft="true"

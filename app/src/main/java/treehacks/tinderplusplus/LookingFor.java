@@ -36,6 +36,8 @@ public class LookingFor extends AppCompatActivity {
         editor.putInt("genderpref", genderpref);
         editor.putString("agepref", agepref);
         editor.apply();
+        editor.commit();
+
 
     }
 

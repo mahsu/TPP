@@ -90,6 +90,8 @@ public class Questions extends AppCompatActivity {
             editor.putBoolean(questions.get(i).toString(), answers[i]);
         }
         editor.apply();
+        editor.commit();
+
     }
 
 }

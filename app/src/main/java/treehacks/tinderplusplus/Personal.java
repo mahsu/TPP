@@ -77,6 +77,8 @@ public class Personal extends AppCompatActivity {
 
             //editor.putInt("selection-end", getSelectionEnd());
             editor.apply();
+            editor.commit();
+
         }
 
     }
