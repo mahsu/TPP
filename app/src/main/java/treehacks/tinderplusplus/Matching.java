@@ -49,7 +49,7 @@ public class Matching extends AppCompatActivity {
         for (String key: settings.getAll().keySet()){
             params.put(key,settings.getString(key +"", ""));
             System.out.println(key);
-            System.out.println(client.get("http://tinderplusplus.mybluemix.net/data/getAns/1",null));
+            //System.out.println(client.get("http://tinderplusplus.mybluemix.net/data/selectAns/1"));
         }
     }
 }
