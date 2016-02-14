@@ -1,7 +1,9 @@
 package treehacks.tinderplusplus;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,4 +39,5 @@ public class Questions extends AppCompatActivity {
             opt2 = o2;
         }
     }
+
 }

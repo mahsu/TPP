@@ -1,5 +1,6 @@
 package treehacks.tinderplusplus;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -27,6 +28,10 @@ public class Personal extends AppCompatActivity {
             }
         });
         */
+    }
+    public void onSubmitButtonClicked(View view){
+        Intent i = new Intent(this, LookingFor.class);
+        startActivity(i);
     }
 
 }
