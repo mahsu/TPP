@@ -15,14 +15,18 @@
     </string>
     <string name="title_activity_personal">Personal</string>
 
-    <string-array name="languages_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+    <string name="language_prompt">Favorite programming language?</string>
+    <string-array name="language_options">
+        <item>C++</item>
+        <item>C#</item>
+        <item>Java</item>
+        <item>JavaScript</item>
+        <item>Python</item>
+        <item>Ocaml</item>
+        <item>HTML</item>
+        <item>ClosureScript</item>
+        <item>Haskell</item>
+        <item>Ruby</item>
+        <item>Perl</item>
     </string-array>
 </resources>

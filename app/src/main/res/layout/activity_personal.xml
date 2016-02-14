@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Name"
         android:ems="10"
         android:id="@+id/editText"
         android:layout_gravity="center_horizontal" />
@@ -48,12 +48,14 @@
         android:ems="10"
         android:id="@+id/editText2"
         android:layout_gravity="center_horizontal"
-        android:text="Age" />
+        android:hint="Age" />
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinner"
+        android:prompt="@string/language_prompt"
+        android:entries="@array/language_options"
         android:spinnerMode="dropdown" />
 
     <EditText
@@ -69,15 +71,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editText4"
-        android:layout_gravity="center_horizontal"
         android:text="Coolest Project" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
+        android:text="SUBMIT"
         android:id="@+id/button"
-        android:layout_gravity="center_horizontal"
-        android:onClick="onSubmitButtonClicked"/>
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
