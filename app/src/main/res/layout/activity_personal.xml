@@ -76,8 +76,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SUBMIT"
-        android:id="@+id/button"
+        android:text="Next"
+        android:id="@+id/next"
         android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
