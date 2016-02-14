@@ -12,6 +12,14 @@ public class LookingFor extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_looking_for);
+        SeekBar _genderpref = (SeekBar)findViewById(R.id.seekbar2);
+        int genderpref = _genderpref.getProgress();
+
+        Spinner _agepref = (Spinner) findViewById(R.id.agepref);
+        String agepref = _agepref.getSelectedItem().toString();
+        //agepref in form "25 to 30" or "45 to 100"
+        int agemin = Integer.parseInt(agepref.substring(0,1));
+        int agemax = Integer.parseInt(agepref.substring(6));
 
         findViewById(R.id.next2).setOnClickListener(new View.OnClickListener() {
 
