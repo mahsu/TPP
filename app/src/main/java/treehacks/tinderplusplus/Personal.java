@@ -1,6 +1,8 @@
 package treehacks.tinderplusplus;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Spinner;
+
+import static android.app.PendingIntent.getActivity;
 
 public class Personal extends AppCompatActivity {
 
@@ -55,7 +59,7 @@ public class Personal extends AppCompatActivity {
             name = _name.getText().toString();
             SeekBar _gender = (SeekBar)findViewById(R.id.gender);
             gender = _gender.getProgress();
-            EditText _age = (EditText)findViewById(R.id.age);
+            EditText _age = (EditText) findViewById(R.id.age);
             age = Integer.parseInt(_age.getText().toString());
             Spinner _lang = (Spinner)(findViewById(R.id.language));
             lang = _lang.getSelectedItem().toString();
@@ -63,6 +67,18 @@ public class Personal extends AppCompatActivity {
             pickup = _pickup.getText().toString();
             EditText _project = (EditText)findViewById(R.id.project);
             project = _project.getText().toString();
+
+            SharedPreferences.Editor editor = getPreferences(MODE_PRIVATE).edit();
+            editor.putString("text", name);
+            editor.putInt("gender", gender);
+            editor.putInt("age", age);
+            editor.putString("pickup", pickup);
+            editor.putString("project", project);
+
+            //editor.putInt("selection-end", getSelectionEnd());
+            editor.apply();
+            editor.commit();
+
         }
 
     }
