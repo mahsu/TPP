@@ -6,3 +6,4 @@ Where developers go to find the 0 to their 1
 * [Matthew Hsu](https://github.com/mahsu)
 * [Gaby Haam](https://github.com/gabriellehaam)
 * [Austin Liu](https://github.com/aliu139)
+* [Rajat Bhageria](https://github.com/rajatbhageria)
