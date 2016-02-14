@@ -40,6 +40,7 @@ import static android.Manifest.permission.READ_CONTACTS;
  */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
+    private View view;
     /**
      * Id to identity READ_CONTACTS permission request.
      */
@@ -88,6 +89,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View view) {
                 attemptLogin();
+
             }
         });
 
@@ -96,13 +98,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
     private void populateAutoComplete() {
-        if (!mayRequestContacts()) {
+        /*if (!mayRequestContacts()) {
             return;
-        }
+        }*/
 
         getLoaderManager().initLoader(0, null, this);
     }
 
+    /*
     private boolean mayRequestContacts() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             return true;
@@ -124,6 +127,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         }
         return false;
     }
+    */
 
     /**
      * Callback received when a permissions request has been completed.
@@ -334,7 +338,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
 
             if (success) {
-                finish();
+                onRegisterClicked();
+                //finish();
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();
@@ -348,7 +353,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         }
     }
 
-    public void onRegisterClicked(View view){
+    public void onRegisterClicked(){
         Intent i = new Intent(this, Personal.class);
         startActivity(i);
     }

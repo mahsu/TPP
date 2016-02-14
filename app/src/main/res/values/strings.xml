@@ -25,15 +25,4 @@
         <item>Uranus</item>
         <item>Neptune</item>
     </string-array>
-
-    <string name="gif_pronounciation">Which pronounciation?</string>
-
-
-    <string name="mobileA">Android</string>
-    <string name="mobileB">iOS</string>
-
-    <string name="tabs_or_spacesA">tabs</string>
-    <string name="tabs_or_spacesB">tabs</string>
-
-    <string name=""></string>
 </resources>

@@ -10,8 +10,20 @@ import java.util.Collections;
 
 public class Questions extends AppCompatActivity {
 
-    private ArrayList<Question> q = new ArrayList<>();
+    private static ArrayList<Question> q;
 
+    static {
+        q = new ArrayList<>();
+        q.add(new Question("Which pronounciation?", "Giff", "Jiff"));
+        q.add(new Question("", "Android", "iOS"));
+        q.add(new Question("Indentation Preference", "Tabs", "Spaces"));
+        q.add(new Question("Naming Preferences","Camel Case","Snake Case"));
+        q.add(new Question("Editor Color Scheme","White on black","Black on White"));
+        q.add(new Question("","github","Bitbucket"));
+        q.add(new Question("Strings","Single Quotes","Double Quotes"));
+        q.add(new Question("","Scrolling","Inverted Scrolling"));
+        q.add(new Question("","Front End","Back End"));
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +40,7 @@ public class Questions extends AppCompatActivity {
         Collections.shuffle(q);
     }
 
-    public class Question {
+    public static class Question {
         public String question;
         public String opt1;
         public String opt2;
