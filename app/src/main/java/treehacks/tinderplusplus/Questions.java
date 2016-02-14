@@ -1,5 +1,6 @@
 package treehacks.tinderplusplus;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,33 +36,39 @@ public class Questions extends AppCompatActivity {
         optA = (Button)findViewById(R.id.optA);
         optB = (Button)findViewById(R.id.optB);
 
-        nextQuestion();
+            nextQuestion();
 
-        optA.setOnClickListener( new View.OnClickListener() {
+            optA.setOnClickListener( new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                answers[currentQuestion] = false;
-                nextQuestion();
-            }
-        });
+                @Override
+                public void onClick(View v) {
+                    answers[currentQuestion] = false;
+                    nextQuestion();
+                }
+            });
 
-        optB.setOnClickListener( new View.OnClickListener() {
+            optB.setOnClickListener( new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                answers[currentQuestion] = true;
-                nextQuestion();
-            }
-        });
+                @Override
+                public void onClick(View v) {
+                    answers[currentQuestion] = true;
+                    nextQuestion();
+                }
+            });
+
     }
 
     public void nextQuestion() {
-        currentQuestion++;
-        Question q = questions.get(currentQuestion);
-        optA.setText(q.opt1);
-        optB.setText(q.opt2);
-
+        if (currentQuestion < questions.size()-1){
+            currentQuestion++;
+            Question q = questions.get(currentQuestion);
+            optA.setText(q.opt1);
+            optB.setText(q.opt2);
+        }
+        else{
+            Intent i = new Intent(this, Matching.class);
+            startActivity(i);
+        }
     }
 
     public static class Question {
